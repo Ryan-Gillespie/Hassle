@@ -1,11 +1,11 @@
 const initialData = {
     tasks: {
-        'task-1': { id: 'task-1', title: 'Set up this App', content: 'Learn how to react.js'},
-        'task-2': { id: 'task-2', title: 'Make it multi-list', content: 'Multiple Collumns go brrrr'},
-        'task-3': { id: 'task-3', title: 'Add User Input', content: 'this needs a form'},
-        'task-4': { id: 'task-4', title: 'Style The Whole Thing', content: 'Write some CSS babey'},
-        'task-5': { id: 'task-5', title: 'Eat Breakfast', content: 'Most important meal babey'},
-        'task-6': { id: 'task-6', title: 'Update Github', content: 'Current Username and documentation SUCK'}
+        'task-1': { id: 'task-1', content: 'Set up this App'},
+        'task-2': { id: 'task-2', content: 'Make it multi-list'},
+        'task-3': { id: 'task-3', content: 'Add User Input'},
+        'task-4': { id: 'task-4', content: 'Style The Whole Thing'},
+        'task-5': { id: 'task-5', content: 'Eat Breakfast'},
+        'task-6': { id: 'task-6', content: 'Update Github'}
     },
     columns: {
         'column-0': { 
