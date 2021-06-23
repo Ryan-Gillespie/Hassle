@@ -23,7 +23,7 @@ export default class Task extends Component {
                         {...provided.draggableProps}
                         {...provided.dragHandleProps}
                     >
-                        {this.props.task.title}
+                        {this.props.task.content}
                     </Container>
                 )}
             </Draggable>

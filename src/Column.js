@@ -6,10 +6,11 @@ import Task from './Task';
 const Container = styled.div`
     margin: 8px;
     border: 1px solid lightgray;
-    border-radius: 2px;
-    display: inline-block;
-    vertical-align: top;
+    border-radius: 5px;
     width: 250px;
+
+    display: flex;
+    flex-direction: column;
 `;
 const Title = styled.h3`
     font-size: 18px;
@@ -17,6 +18,8 @@ const Title = styled.h3`
 `;
 const TaskList = styled.div`
     padding: 8px;
+    flex-grow: 1;
+    min-height: 100px;
 `;
 
 export default class Column extends Component {
