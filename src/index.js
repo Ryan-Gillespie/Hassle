@@ -2,7 +2,6 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import initialData from './initial-data';
 import Column from './Column';
-import Header from './Header';
 import { DragDropContext } from 'react-beautiful-dnd';
 import 'reset-css';
 import './index.css';
@@ -77,7 +76,9 @@ class App extends React.Component {
       <DragDropContext
         onDragEnd={this.onDragEnd}
       >
-        <Header />
+        <div className="header">
+            <h1>Hassle</h1>
+        </div>
           <div className="main-content">
           { this.state.columnOrder.map((columnId) => {
             const column = this.state.columns[columnId];

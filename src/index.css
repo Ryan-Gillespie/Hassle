@@ -1,12 +1,85 @@
 body {
     background: linear-gradient(90deg, hsla(265, 53%, 29%, 1) 0%, hsla(24, 93%, 73%, 1) 100%);
-    /*background: linear-gradient(90deg, hsla(191, 70%, 46%, 1) 0%, hsla(195, 76%, 25%, 1) 100%);*/
+}
+
+.whole-screen {
+    display: grid;
+    grid-template-areas: 
+        "header header"
+        "sidebar content";
+    grid-template-columns: 250px auto;
+}
+
+.header {
+    grid-area: header;
+    height: 10vh;
+    background-color: #153243;
+}
+
+.header h1 {
+    font-size: 72px;
+    color: #fff;
+    padding: 8px;
+    padding-left: 15px;
+    font-family: "Segoe UI";
 }
 
 .main-content {
+    grid-row: 2;
+    grid-column: 2;
     display: grid;
-    grid-template-columns: 25% 25% 25% 25%;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1vh;
     height: 90vh;
     justify-content: center;
     align-items: center;
+}
+
+@keyframes columnEntrance {
+    from {
+        opacity: 0;
+        filter: hue-rotate(180deg);
+    }
+    to {
+        opacity: 1;
+        filter: hue-rotate(0deg);
+    }
+}
+
+.column {
+    margin: 8px;
+    border-radius: 5px;
+    display: flex;
+    flex-direction: column;
+    height: 90%;
+
+    animation-name: columnEntrance;
+    animation-duration: 3s;
+}
+
+.column animated-text {
+    animation-name: columnEntrance;
+    animation-duration: 3s;
+}
+
+.column h3 {
+    font-size: 28px;
+    padding: 8px;
+    padding-left: 10px;
+    border-radius: 8px 8px 0px 0px;
+    display: flex;
+    background-color: #153243;
+    width: 40%;
+    color: #EBF6FF;
+}
+
+.task-list {
+    padding: 8px;
+    flex-grow: 1;
+    min-height: 100px;
+    background-color: #153243;
+    border-radius: 0px 5px 5px 5px;
+
+    animation-name: columnEntrance;
+    animation-duration: 3s;
 }

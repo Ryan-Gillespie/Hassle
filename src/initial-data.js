@@ -5,7 +5,8 @@ const initialData = {
         'task-3': { id: 'task-3', content: 'Add User Input'},
         'task-4': { id: 'task-4', content: 'Style The Whole Thing'},
         'task-5': { id: 'task-5', content: 'Eat Breakfast'},
-        'task-6': { id: 'task-6', content: 'Update Github'}
+        'task-6': { id: 'task-6', content: 'Update Github'},
+        'task-7': { id: 'task-7', content: 'Boop Stephanie'}
     },
     columns: {
         'column-0': { 
