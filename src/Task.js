@@ -3,12 +3,13 @@ import { Draggable } from 'react-beautiful-dnd'
 import styled from 'styled-components';
 
 const Container = styled.div`
-    border: 1px solid lightgray;
-    border-radius: 2px;
+    border: 1px solid green;
+    border-radius: 5px;
     padding: 8px;
     margin-bottom: 8px;
     background-color: white;
-    width: 220px;
+    font-size: 28px;
+    background-color: lightgreen;
 `;
 
 export default class Task extends Component {

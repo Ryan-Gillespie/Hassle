@@ -5,19 +5,27 @@ import Task from './Task';
 
 const Container = styled.div`
     margin: 8px;
-    border: 1px solid lightgray;
     border-radius: 5px;
-    display: block;
+    display: flex;
+    flex-direction: column;
+    height: 90%;
 `;
 const Title = styled.h3`
-    font-size: 18px;
+    font-size: 28px;
     padding: 8px;
+    padding-left: 10px;
+    border-radius: 8px 8px 0px 0px;
+    display: flex;
+    background-color: #153243;
+    width: 40%;
+    color: #EBF6FF;
 `;
 const TaskList = styled.div`
-    display: flex;
     padding: 8px;
     flex-grow: 1;
     min-height: 100px;
+    background-color: #153243;
+    border-radius: 0px 5px 5px 5px;
 `;
 
 export default class Column extends Component {
@@ -25,7 +33,7 @@ export default class Column extends Component {
         return (
             <Container>
                 <Title>{this.props.column.title}</Title>
-                <Droppable droppableId={this.props.column.id} direction="horizontal">
+                <Droppable droppableId={this.props.column.id} direction="vertical">
                     {(provided) => (
                         <TaskList
                             {...provided.droppableProps}
