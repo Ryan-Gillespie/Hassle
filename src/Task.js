@@ -1,4 +1,4 @@
-import React, { Component } from 'react'
+import React from 'react'
 import { Draggable } from 'react-beautiful-dnd'
 import styled from 'styled-components';
 
@@ -12,23 +12,17 @@ const Container = styled.div`
     background-color: lightgreen;
 `;
 
-export default class Task extends Component {
-    render() {
-        return (
-            <Draggable
-                draggableId={this.props.task.id}
-                index={this.props.index}
-            >
-                {(provided) => (
-                    <Container
-                        ref={provided.innerRef}
-                        {...provided.draggableProps}
-                        {...provided.dragHandleProps}
-                    >
-                        {this.props.task.content}
-                    </Container>
-                )}
-            </Draggable>
-        );
-    }
+function Task(props) {
+  return (
+      <Draggable draggableId={props.task.id} index={props.index}>
+        {(provided) => (
+          <Container ref={provided.innerRef} {...provided.draggableProps} {...provided.dragHandleProps}> 
+            <h2>{props.task.title}</h2>
+            <p>{props.task.description}</p>
+          </Container>
+        )}
+      </Draggable>
+  );
 }
+
+export default Task;

@@ -2,17 +2,8 @@ body {
     background: linear-gradient(90deg, hsla(265, 53%, 29%, 1) 0%, hsla(24, 93%, 73%, 1) 100%);
 }
 
-.whole-screen {
-    display: grid;
-    grid-template-areas: 
-        "header header"
-        "sidebar content";
-    grid-template-columns: 250px auto;
-}
-
 .header {
-    grid-area: header;
-    height: 10vh;
+    height: 10%;  
     background-color: #153243;
 }
 
@@ -25,14 +16,12 @@ body {
 }
 
 .main-content {
-    grid-row: 2;
-    grid-column: 2;
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    gap: 1vh;
-    height: 90vh;
-    justify-content: center;
-    align-items: center;
+    display: flex;
+    flex-flow: row-wrap;
+    justify-content: flex-start;
+    align-items: flex-start;
+    height: 100%;
+    margin: 15px;
 }
 
 @keyframes columnEntrance {
@@ -47,39 +36,32 @@ body {
 }
 
 .column {
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     margin: 8px;
     border-radius: 5px;
-    display: flex;
-    flex-direction: column;
-    height: 90%;
+    width: 25%;
 
     animation-name: columnEntrance;
     animation-duration: 3s;
 }
 
-.column animated-text {
-    animation-name: columnEntrance;
-    animation-duration: 3s;
-}
-
-.column h3 {
-    font-size: 28px;
+.col-header {
     padding: 8px;
     padding-left: 10px;
     border-radius: 8px 8px 0px 0px;
-    display: flex;
     background-color: #153243;
-    width: 40%;
+    width: fit-content;
+}
+
+.column h3 {
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-size: 18px;
     color: #EBF6FF;
 }
 
 .task-list {
     padding: 8px;
-    flex-grow: 1;
     min-height: 100px;
     background-color: #153243;
     border-radius: 0px 5px 5px 5px;
-
-    animation-name: columnEntrance;
-    animation-duration: 3s;
 }
