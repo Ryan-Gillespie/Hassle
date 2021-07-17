@@ -13,7 +13,6 @@ function Column(props) {
         id,
         props.taskList.map(task => task.id).indexOf(id)
       ]
-      console.log("colum.js", taskProps);
       props.onTaskEdit(props.onTaskEdit(taskProps));
     }
 

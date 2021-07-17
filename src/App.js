@@ -79,7 +79,7 @@ function App() {
     const [showForm, setShowForm] = useState(false);
 
     const handleAddSubmit = (title, description) => { setShowForm(false); addTask(cols, setCols, title, description) };
-    const onTaskEdit = (taskProps) => { console.log("line 81", taskProps); editTask(taskProps, cols, setCols) };
+    const onTaskEdit = (taskProps) => { editTask(taskProps, cols, setCols) };
     
     const colColors = ['column-orange', 'column-blue', 'column-red', 'column-green', null]
 
