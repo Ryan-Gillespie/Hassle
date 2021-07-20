@@ -93,7 +93,7 @@ function App() {
             })}
           </div>
         </DragDropContext>
-        <button className="add-button" onClick={() => setShowForm(!showForm)}>+</button>
+        <button className="add-button" onClick={() => setShowForm(!showForm)}><h1>+</h1></button>
         {showForm && 
           <TaskAddForm handleSubmit={handleAddSubmit} destroy={() => setShowForm(false)} />
         }

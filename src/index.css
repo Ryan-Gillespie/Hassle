@@ -32,15 +32,6 @@ body {
     --height: 80px;
     background-color: limegreen;
     border: none;
-    height: var(--height);
-    width: var(--width);
-    position: fixed;
-}
-
-.add-button {
-    --height: 80px;
-    background-color: limegreen;
-    border: none;
     position: fixed;
     height: var(--height);
     width: var(--height);
@@ -54,6 +45,12 @@ body {
     flex-direction: column;
     justify-content: center;
     align-items: center;
+}
+.add-button h1 {
+    font-size: 100px;
+    font-family: 'Segoe UI', monospace;
+    color: #fff;
+    transform: translate(0px, -10px);
 }
 
 .reset-button button {
