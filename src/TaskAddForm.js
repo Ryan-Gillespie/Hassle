@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import './TaskAddForm.css';
+import './TaskForm.css';
 
 export default function TaskAddForm(props) {
     const [title, setTitle] = useState('');
@@ -11,22 +11,31 @@ export default function TaskAddForm(props) {
     }
 
     return (
-        <form>
-            <h2>Add New Task</h2>
-            <label>Task Title: </label>
-            <input 
-                type="text"
-                required
-                value={title}
-                onChange={(e) => setTitle(e.target.value)}
-            />
-            <label>Description: </label>
-            <textarea 
-                required
-                value={description}
-                onChange={(e) => setDescription(e.target.value)}
-            ></textarea>
-            <button onClick={handleSubmit}>Add Task</button>
+        <form className="task-add-form">
+            <div className="task-form">
+                <h2>Add New Task</h2>
+                <button className="close-add" onClick={() => props.destroy()}>X</button>
+                <div className="shift-up-add">
+                <label>Task Title: </label>
+                <input 
+                    type="text"
+                    required
+                    maxLength={60}
+                    placeholder={"Task Title goes here"}
+                    value={title}
+                    onChange={(e) => setTitle(e.target.value)}
+                />
+                <label>Description: </label>
+                <textarea 
+                    maxLength={400}
+                    placeholder={"Task Description goes here"}
+                    required
+                    value={description}
+                    onChange={(e) => setDescription(e.target.value)}
+                ></textarea>
+                <button onClick={handleSubmit}>Done</button>
+                </div>
+            </div>
         </form>
     )
 }
