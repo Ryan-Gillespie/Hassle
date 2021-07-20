@@ -25,7 +25,7 @@
     "test": "react-scripts test",
     "eject": "react-scripts eject",
     "electron": "concurrently BROWSER=NONE\"npm start\" \"wait-on http://localhost:3000 && electron .",
-    "predeploy": "npm run build",
+    "predeploy": "react-scripts build",
     "deploy": "gh-pages -d build"
   },
   "eslintConfig": {
