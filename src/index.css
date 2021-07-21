@@ -7,10 +7,17 @@ body {
 }
 
 .header {
-    height: 10%;  
-    background-color: #5079A2;
+    height: 10%;
+    background: linear-gradient(to right, #D88424, #2384B8);
 }
-
+.header::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0; bottom: calc(90% - 8px);
+    border-radius: inherit;
+    background: linear-gradient(to right, #BD3A43, #2BBB6E);
+    mask: linear-gradient(#0000, #000);
+}
 .header h1 {
     font-size: 72px;
     color: #fff;
