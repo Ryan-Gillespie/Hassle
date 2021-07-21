@@ -13,11 +13,21 @@
     font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     margin: 8px;
     border-radius: 5px;
-    width: 23.7%;
-    min-width: 250px;
+    flex: 23%;
 
     animation: columnEntrance 2s;
 }
+@media screen and (max-width: 992px) {
+    .column {
+      flex: 45%;
+    }
+}
+@media screen and (max-width: 750px) {
+    .column {
+        flex: 100%;
+    }
+}
+
 
 .column-orange {
     --bgColor: #D88424;

@@ -8,6 +8,8 @@
 }
 
 .task-card button {
+    display: inline-block;
+    align-self: flex-start;
     width: fit-content;
     min-width: 28px;
     height: 28px;
@@ -15,8 +17,8 @@
     color: #fff;
     border: solid 1px #fff;
     border-radius: 14px;
-    transition-duration: 300ms;
     margin-bottom: 5px;
+    transition-duration: 300ms;
 }
 .task-card button:hover {
     background-color: white;
@@ -35,4 +37,5 @@
 .task-card p {
     margin-top: 5px;
     font-size: 15px;
+    margin-bottom: 5px;
 }
