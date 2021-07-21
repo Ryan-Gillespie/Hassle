@@ -5,9 +5,12 @@
 /.pnp
 .pnp.js
 
+<<<<<<< HEAD
 # production build
 /build
 
+=======
+>>>>>>> parent of fb71bd9 (Updates)
 # testing
 /coverage
 
