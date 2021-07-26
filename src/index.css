@@ -2,28 +2,30 @@ body {
     background-color: #1f2f3f;
     height: 100vh;
     width: 100%;
-    margin: 0px;;
-    /* background: linear-gradient(180deg, hsla(265, 53%, 29%, 1) 25%, hsla(24, 93%, 73%, 1) 100%); */
+    margin: 0px;
 }
 
 .header {
-    height: 10%;
+    height: 100px;
     background: linear-gradient(to right, #D88424, #2384B8);
 }
-.header::before {
+.header:before {
     content: '';
     position: absolute;
-    top: 0; left: 0; right: 0; bottom: calc(90% - 8px);
-    border-radius: inherit;
+    top: 0; left: 0; right: 0; bottom: calc(100% - 100px);
+    mask-image: linear-gradient(to bottom, transparent, black);
     background: linear-gradient(to right, #BD3A43, #2BBB6E);
-    mask: linear-gradient(#0000, #000);
+    z-index: 0;
 }
-.header h1 {
+.header-gradient h1 {
+    height: 100%;
+    background: none;
     font-size: 72px;
     color: #fff;
     padding: 8px;
     padding-left: 15px;
     font-family: "Segoe UI";
+    mix-blend-mode: lighten;
 }
 
 .main-content {

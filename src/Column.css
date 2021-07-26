@@ -49,17 +49,48 @@
     border-radius: 8px 8px 0px 0px;
     background-color: var(--bgColor);
     width: fit-content;
+    font-size: 18px;
+}
+
+.col-header button {
+    background-color: var(--bgColor);
+    border: solid 2px #1f2f3f;
+    color: #fff;
+    border-radius: 12px;
+    transition-duration: 300ms;
+    margin-left: 5px;
+    vertical-align: top;
+}
+.col-header button:hover {
+    background-color: #fff;
+    color: #000;
 }
 
 .column h3 {
     font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     font-size: 18px;
     color: #EBF6FF;
+    display: inline-block;
+}
+
+.task-list-wrapper {
+    padding: 8px;
+    border-radius: 0px 8px 8px 8px;
+    background-color: var(--bgColor);
 }
 
 .task-list {
-    padding: 8px;
+    padding: 0px;
     min-height: 100px;
+    max-height: 75vh;
+    overflow: auto;
     background-color: var(--bgColor);
     border-radius: 0px 5px 5px 5px;
+    -ms-overflow-style: none;  /* IE and Edge */
+    scrollbar-width: none;  /* Firefox */
+}
+
+/* Hide scrollbar for Chrome, Safari and Opera */
+.task-list::-webkit-scrollbar {
+    display: none;
 }

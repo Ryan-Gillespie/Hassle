@@ -66,6 +66,15 @@ const onDragEnd = (result, state, setState) => {
     localStorage.setItem("State", JSON.stringify(state));
 }
 
+const clearComplete = (cols, setCols) => {
+    const newCols = Array.from(cols);
+    const completeCol = newCols.find(column => column.id === 'Complete');
+    completeCol.tasks.splice(0, completeCol.tasks.length);
+
+    setCols(newCols);
+    localStorage.setItem("State", JSON.stringify(cols));
+}
+
 const initCols = () => {
     const locstor = JSON.parse(localStorage.getItem("State"));
     if (locstor === null) {
@@ -80,16 +89,19 @@ function App() {
 
     const handleAddSubmit = (title, description) => { setShowForm(false); addTask(cols, setCols, title, description) };
     const onTaskEdit = (taskProps) => { editTask(taskProps, cols, setCols) };
+    const onClearPress = () => { clearComplete(cols, setCols) };
     
-    const colColors = ['column-orange', 'column-blue', 'column-red', 'column-green', null]
+    const colColors = ['column-blue', 'column-red', 'column-orange', 'column-green', null]
 
     return (
       <div>
-        <div className="header"><h1>Hassle</h1></div>
+        <div className="header">
+          <div className="header-gradient"><h1>Hassle</h1></div>
+        </div>
         <DragDropContext onDragEnd={result => onDragEnd(result, cols, setCols)}>
           <div className="main-content"> 
             {cols.map((col, index) => {
-              return <Column title={col.id} taskList={col.tasks} colColor={colColors[index]} onTaskEdit={onTaskEdit} />
+              return <Column title={col.id} taskList={col.tasks} colColor={colColors[index]} onTaskEdit={onTaskEdit} clearComplete={onClearPress} />
             })}
           </div>
         </DragDropContext>

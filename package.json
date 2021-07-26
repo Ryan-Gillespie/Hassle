@@ -3,7 +3,7 @@
   "version": "0.1.0",
   "private": false,
   "homepage": "http://ryan-gillespie.github.io/Hassle/",
-  "main": "src/main.js",
+  "main": "src/electron-main.js",
   "dependencies": {
     "@testing-library/jest-dom": "^5.14.1",
     "@testing-library/react": "^11.2.7",
@@ -24,9 +24,11 @@
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
-    "electron": "concurrently BROWSER=NONE\"npm start\" \"wait-on http://localhost:3000 && electron .",
+    "dev": "electron .",
     "predeploy": "react-scripts build",
-    "deploy": "gh-pages -d build"
+    "deploy": "gh-pages -d build",
+    "pack": "electron-builder --dir",
+    "dist": "electron-builder"
   },
   "eslintConfig": {
     "extends": [
@@ -47,7 +49,14 @@
     ]
   },
   "devDependencies": {
-    "electron": "^13.1.6",
+    "electron": "^13.1.7",
+    "electron-builder": "^22.11.7",
     "gh-pages": "^3.2.3"
+  },
+  "build": {
+    "appId": "hassle",
+    "mac": {
+      "category": "Productivity"
+    }
   }
 }

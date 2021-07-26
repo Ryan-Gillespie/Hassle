@@ -9,6 +9,9 @@ function createWindow () {
   const mainWindow = new BrowserWindow({
     width: 800,
     height: 600,
+    minWidth: 550,
+    minHeight: 600,
+    icon: path.join(__dirname, '../public/Hassle-Gradient.ico'),
     webPreferences: {
       preload: path.join(__dirname, 'preload.js')
     }
@@ -20,7 +23,7 @@ function createWindow () {
   mainWindow.loadURL('http://localhost:3000');
 
   // Open the DevTools.
-  // mainWindow.webContents.openDevTools()
+  mainWindow.webContents.openDevTools()
 }
 
 // This method will be called when Electron has finished

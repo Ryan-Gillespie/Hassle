@@ -16,6 +16,8 @@ function Column(props) {
       props.onTaskEdit(props.onTaskEdit(taskProps));
     }
 
+    const onClearPres = () => { props.clearComplete() };
+
     if (props.title === 'Delete') {
         return (
             <div className="delete-dropzone">
@@ -33,17 +35,22 @@ function Column(props) {
     return (
       <div className="column">
         <div className={props.colColor}>
-        <div className="col-header"><h3>{props.title}</h3></div>
+        <div className="col-header">
+          <h3>{props.title}</h3>
+          {props.title === 'Complete' && <button onClick={onClearPres}>clear</button>}
+        </div>
         <Droppable droppableId={props.title} direction="vertical">
           {(provided) => (
-            <div className="task-list"
-              {...provided.droppableProps} 
-              ref={provided.innerRef}
-            >
-              {props.taskList.map((task, index) => 
-                <Task key={task.id} task={task} index={index} onTaskEdit={onTaskEdit}
-              />)}
-              {provided.placeholder}
+            <div className="task-list-wrapper">
+              <div className="task-list"
+                {...provided.droppableProps} 
+                ref={provided.innerRef}
+              >
+                {props.taskList.map((task, index) => 
+                  <Task key={task.id} task={task} index={index} onTaskEdit={onTaskEdit} />
+                )}
+                {provided.placeholder}
+              </div>
             </div>
           )}
         </Droppable>
