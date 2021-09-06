@@ -2,6 +2,8 @@
 
 This app was made as a first forray into React and frontend development by Ryan Gillespie.
 
+![image](https://user-images.githubusercontent.com/47795760/132256540-2f38b19c-ae8b-44ee-afdf-e2de3ebad1dc.png)
+
 ## To Use
 
 Simply [Click this link](http://ryan-gillespie.github.io/Hassle/) to open up the app. 
